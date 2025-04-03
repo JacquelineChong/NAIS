@@ -24,6 +24,7 @@
     <meta property="og:site_name" content="NAIS Graduation 2025">
     <meta property="og:locale" content="en_US">
     
+   <link rel="preload" href="https://github.com/JacquelineChong/NAIS/blob/NAIS/generate_me_a_gif_suitable_to_be_the_background_of_a_hero_banner_of_a_landing_page_about_a_graduatio_seed3359659124.gif?raw=true" as="image">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -133,17 +134,22 @@
         
         /* Hero Section */
         .hero {
-            height: 100vh;
-            background: url('https://github.com/JacquelineChong/NAIS/blob/NAIS/generate_me_a_gif_suitable_to_be_the_background_of_a_hero_banner_of_a_landing_page_about_a_graduatio_seed3359659124.gif?raw=true');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            margin-top: 60px;
-            position: relative;
-        }
+    height: 100vh;
+    background-color: #000; /* Fallback color while the GIF loads */
+    background-image: url('https://github.com/JacquelineChong/NAIS/blob/NAIS/generate_me_a_gif_suitable_to_be_the_background_of_a_hero_banner_of_a_landing_page_about_a_graduatio_seed3359659124.gif?raw=true');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-top: 60px;
+    position: relative;
+    will-change: background-image; /* Hint to browser for optimization */
+}
+.hero.loaded {
+    transition: background-image 0.3s ease-in;
+}
         
         .hero::before {
             content: '';
@@ -1098,6 +1104,18 @@
     </div>
 
     <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const heroSection = document.querySelector('.hero');
+    const img = new Image();
+    
+    img.onload = function() {
+        heroSection.style.backgroundImage = `url('${img.src}')`;
+        heroSection.classList.add('loaded');
+    };
+    
+    img.src = 'https://github.com/JacquelineChong/NAIS/blob/NAIS/generate_me_a_gif_suitable_to_be_the_background_of_a_hero_banner_of_a_landing_page_about_a_graduatio_seed3359659124.gif?raw=true';
+});
+        
         // Mobile Navigation
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');

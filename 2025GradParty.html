@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class of 2025 Graduation Celebration | The Eighth HKJC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a3a6e;
+            --secondary-color: #d4af37;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            transition: var(--transition);
+            position: relative;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.19%20(3).jpeg?raw=true');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Event Details Section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .detail-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .detail-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .detail-content {
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .detail-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .detail-content p {
+            color: #666;
+        }
+        
+        /* Venue Section */
+        .venue {
+            background-color: #f5f5f5;
+        }
+        
+        .venue-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .venue-text h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .venue-text p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .venue-text ul {
+            list-style-type: none;
+            margin-bottom: 2rem;
+        }
+        
+        .venue-text ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .venue-text ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .venue-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .venue-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .venue-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Floor Plan */
+        .floor-plan {
+            text-align: center;
+        }
+        
+        .floor-plan-image {
+            max-width: 100%;
+            margin: 2rem auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .floor-plan-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .modal-content {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            color: var(--secondary-color);
+            transform: rotate(90deg);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.20%20(1).jpeg?raw=true');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .venue-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .venue-image {
+                order: -1;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                right: -100%;
+                width: 70%;
+                height: calc(100vh - 60px);
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: var(--transition);
+                z-index: 999;
+                gap: 1.5rem;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Class of <span>2025</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#details">Event Details</a></li>
+                    <li><a href="#venue">Venue</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Graduation Celebration 2025</h1>
+            <p>Join us for an unforgettable celebration at The Eighth, Hong Kong Jockey Club</p>
+            <a href="#details" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section id="details" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Event Details</h2>
+            </div>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="detail-content">
+                        <div class="detail-icon">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <h3>Date & Time</h3>
+                        <p>Friday, June 20, 2025</p>
+                        <p>12:00 PM - 4:00 PM</p>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-content">
+                        <div class="detail-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>The Eighth, 8/F</p>
+                        <p>The Jockey Club New Clubhouse</p>
+                        <p>25 Shan Kwong Road, Happy Valley</p>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-content">
+                        <div class="detail-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Cost</h3>
+                        <p>HKD XXX per person</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section id="venue" class="section venue">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Venue</h2>
+            </div>
+            <div class="venue-content">
+                <div class="venue-text">
+                    <h3>The Eighth, HKJC</h3>
+                    <p>The Eighth at Hong Kong Jockey Club offers an elegant and sophisticated setting for our graduation celebration. Located on the 8th floor of The Jockey Club New Clubhouse in Happy Valley, this premium venue provides stunning views and a luxurious atmosphere.</p>
+                    <p>Your fee includes:</p>
+                    <ul>
+                        <li>Tailor-made Light Lunch Buffet menu</li>
+                        <li>Unlimited serving of house beer, soft drinks and chilled orange juice for 3 hours</li>
+                        <li>Bus transportation for graduation students from school to venue</li>
+                        <li>Professional photography services at the party</li>
+                        <li>Complimentary for Year 6 teachers, TLAs, Mr Duncan, Mrs Harley and the Primary Leadership Team</li>
+                    </ul>
+                    <a href="#gallery" class="btn">View Gallery</a>
+                </div>
+                <div class="venue-image">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.18%20(2).jpeg?raw=true" alt="The Eighth Venue">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floor Plan Section -->
+    <section class="section floor-plan">
+        <div class="container">
+            <div class="section-title">
+                <h2>Floor Plan</h2>
+            </div>
+            <p>The spacious layout of The Eighth provides ample room for dining, socializing, and celebrating this special milestone.</p>
+            <div class="floor-plan-image">
+                <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/Screenshot%202025-04-03%20at%2018.36.14.png?raw=true" alt="The Eighth Floor Plan">
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Venue Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.17%20(1).jpeg?raw=true" alt="Venue Image 1">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.17.jpeg?raw=true" alt="Venue Image 2">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.18%20(1).jpeg?raw=true" alt="Venue Image 3">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.18%20(3).jpeg?raw=true" alt="Venue Image 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.18.jpeg?raw=true" alt="Venue Image 5">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.19%20(1).jpeg?raw=true" alt="Venue Image 6">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.19%20(2).jpeg?raw=true" alt="Venue Image 7">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.19.jpeg?raw=true" alt="Venue Image 8">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.20%20(2).jpeg?raw=true" alt="Venue Image 9">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.20.jpeg?raw=true" alt="Venue Image 10">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.21%20(1).jpeg?raw=true" alt="Venue Image 11">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://github.com/JacquelineChong/NAIS/blob/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.21%20(2).jpeg?raw=true" alt="Venue Image 12">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container">
+            <h2>Celebrate This Special Milestone</h2>
+            <p>Join us for an unforgettable graduation celebration at The Eighth. Reserve your spot today and be part of this memorable occasion.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0Ulu1OsxiRNUPDpPd7XIcXrgsaHDHaYHoJs8YshG_P3hg4g/viewform?usp=dialog" class="btn" target="_blank">Sign up</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>Class of NAIS 2025 Graduation Celebration</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div class="modal" id="imageModal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Enlarged venue image">
+        </div>
+    </div>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Image Modal
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeModal = document.querySelector('.close-modal');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                modalImg.src = imgSrc;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerOffset = 70;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

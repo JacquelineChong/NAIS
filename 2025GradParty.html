@@ -311,7 +311,7 @@
         
         .slideshow {
             display: flex;
-            transition: transform 0.25s ease;
+            transition: transform 0.3s ease;
         }
         
         .slide {
@@ -1183,7 +1183,7 @@
         prevBtn.addEventListener('click', prevSlide);
         
         // Auto slide
-        let slideshowInterval = setInterval(nextSlide, 5000);
+        let slideshowInterval = setInterval(nextSlide, 2500);
         
         // Pause on hover
         const slideshowContainer = document.querySelector('.slideshow-container');
@@ -1192,7 +1192,7 @@
         });
         
         slideshowContainer.addEventListener('mouseleave', () => {
-            slideshowInterval = setInterval(nextSlide, 5000);
+            slideshowInterval = setInterval(nextSlide, 2500);
         });
         
         // Smooth scrolling for anchor links

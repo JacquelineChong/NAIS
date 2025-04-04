@@ -544,7 +544,7 @@
             margin-top: 1rem;
         }
         
-        /* CTA Section */
+ /* CTA Section */
 .cta {
     position: relative;
     background-color: #40E0D0; /* Turquoise fallback */
@@ -564,9 +564,17 @@
     background-image: url('https://raw.githubusercontent.com/JacquelineChong/NAIS/NAIS/TH8th/WhatsApp%20Image%202025-04-03%20at%2007.58.18.jpeg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    /* Remove fixed attachment for better mobile compatibility */
+    /* background-attachment: fixed; */
     opacity: 0.7;
     z-index: -1;
+}
+
+/* Add media query for desktop only */
+@media (min-width: 768px) {
+    .cta::before {
+        background-attachment: fixed; /* Apply fixed attachment only on desktop */
+    }
 }
 
 .cta-content {
